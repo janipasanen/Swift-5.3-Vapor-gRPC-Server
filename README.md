@@ -1,7 +1,6 @@
 **TODO gRPC sample API**
 
-This web service is for internal usage with calls comming from a main api.
-It can be used for storing and accessing data in an other database than the main api or to access data in the same api as the main but just develop the code that does the work in Swift instead. Note that if using the same database only one of the APIs should do the writing inorder to avoid probelms with API caching being of sync, cache thinks data does not exist but was written to database by other API, etc.
+This web service is unsecured (HTTP) so idealy used for internal usage with calls comming from a main api.
 
 
 ***Installing Protoc and the Swift Plugins***
