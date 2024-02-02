@@ -70,8 +70,10 @@ Note: As your API evolves, you must never reuse numbers. The gRPC generation cod
 protoc --swift_out=Sources/App/Models/ --grpc-swift_out=Sources/App/Controllers/ todo.proto
 ```
 
+** LICENCE for code not based on below tutorial
+GPL 2.0
 
-** LICENS for third party code **
+** LICENCE for the sample code **
 
 This code is based on https://www.kodeco.com/30342883-grpc-and-server-side-swift-getting-started and code is re-used from the sample project in this tutorial and that code is Copyright (c) 2022 Razeware LLC, the licence is as follows:
 
