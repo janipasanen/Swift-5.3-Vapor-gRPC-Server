@@ -31,46 +31,17 @@
 /// THE SOFTWARE.
 
 import Fluent
-import Vapor
 
-final class Todo: Model, Content {
-    static let schema = "todos"
-    
-    @ID(key: .id)
-    var id: UUID?
-    
-    @Field(key: "title")
-    var title: String
-    
-    //TODO: Add field for task completed
-    @Field(key: "completed")
-    var completed: Bool
-    
-    
-    init() { }
-    
-    init(id: UUID? = nil, title: String, completed: Bool? = false) {
-        self.id = id
-        self.title = title
-        self.completed = completed ?? false
-    }
+struct AddTodoCompletion: Migration {
+  func prepare(on database: Database) -> EventLoopFuture<Void> {
+    return database.schema("todos")
+      .field("completed", .bool, .sql(.default(false)))
+      .update()
+  }
+  
+  func revert(on database: Database) -> EventLoopFuture<Void> {
+    return database.schema("todos")
+      .deleteField("completed")
+      .update()
+  }
 }
-
-//Create initializer methods
-extension Todos_Todo {
-    init (_ todo: Todo) {
-        if let todoid = todo.id {
-            self.todoID = todoid.uuidString
-        }
-        self.completed = todo.completed
-        self.title = todo.title
-    }
-}
-
-
-extension Todo {
-    convenience init (_ todo: Todos_Todo) {
-        self.init(id: UUID(uuidString: todo.todoID), title: todo.title, completed: todo.completed)
-    }
-}
-
