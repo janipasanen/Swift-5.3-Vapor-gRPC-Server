@@ -73,7 +73,7 @@ protoc --swift_out=Sources/App/Models/ --grpc-swift_out=Sources/App/Controllers/
 
 ** LICENS for third party code **
 
-This code is based on https://www.kodeco.com/30342883-grpc-and-server-side-swift-getting-started and code is re-used from the sample project in this tutorial and that code is Copyright (c) 2022 Razeware LLC, the lices is as follows:
+This code is based on https://www.kodeco.com/30342883-grpc-and-server-side-swift-getting-started and code is re-used from the sample project in this tutorial and that code is Copyright (c) 2022 Razeware LLC, the licence is as follows:
 
 "/// Copyright (c) 2022 Razeware LLC
 ///
