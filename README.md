@@ -68,13 +68,7 @@ Note: As your API evolves, you must never reuse numbers. The gRPC generation cod
 
 ```
 protoc --swift_out=Sources/App/Models/ --grpc-swift_out=Sources/App/Controllers/ todo.proto
-protoc --swift_out=Sources/App/Models/ --grpc-swift_out=Sources/App/Controllers/ user.proto
 ```
-
-
-
-** LICENS for code specific for this project **
-Where code is not re-used from existing sources the code is Copyright (c) 2024 Zesec Produktion AB
 
 
 ** LICENS for third party code **
